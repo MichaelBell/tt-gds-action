@@ -15,7 +15,7 @@ runs:
         #           and eqy_test/action.yml
         #           PDK_VERSION=e0f692f46654d6c7c99fc70a0c94a080dab53571
         cat << EOF >> $GITHUB_ENV
-        OPENLANE_TAG=2023.11.23
+        OPENLANE_TAG=tt06-no-pin-swaps
         OPENLANE_IMAGE_NAME=efabless/openlane:2023.11.23
         OPENLANE_ROOT=/home/runner/openlane
         PDK_ROOT=/home/runner/pdk
@@ -53,7 +53,7 @@ runs:
     - name: Install OpenLane
       shell: bash
       run: |
-        git clone --depth=1 --branch $OPENLANE_TAG https://github.com/The-OpenROAD-Project/OpenLane.git $OPENLANE_ROOT
+        git clone --depth=1 --branch $OPENLANE_TAG https://github.com/MichaelBell/OpenLane.git $OPENLANE_ROOT
         cd $OPENLANE_ROOT
         make
 
