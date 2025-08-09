@@ -18,6 +18,9 @@ inputs:
   testcases:
     description: 'The testcases to run (comma separated)'
     default: ''
+  make-targets:
+    description: 'Targets to pass to the test makefile'
+    default: ''
 
 runs:
   using: 'composite'
@@ -92,7 +95,7 @@ runs:
         cd "${{ inputs.test-dir }}"
         rm -f tb.vcd results.xml
         make clean
-        GATES=yes make
+        GATES=yes make ${{ inputs.make-targets }}
 
         # `make` will return success even if the tests fail, so check for failure in results.xml
         test -f results.xml
