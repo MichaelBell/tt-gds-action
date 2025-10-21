@@ -112,11 +112,11 @@ runs:
         test -f results.xml
         ! grep failure results.xml
 
-    - name: Upload VCD
+    - name: Upload results
       if: always()
       uses: actions/upload-artifact@v4
       with:
-          name: gatelevel_test_vcd
+          name: gatelevel_test_fst${{ inputs.make-targets }}
           path: |
             ${{ inputs.test-dir }}/tb.vcd
             ${{ inputs.test-dir }}/sim_build/gl/tb.fst
