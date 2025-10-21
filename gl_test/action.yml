@@ -117,6 +117,7 @@ runs:
           path: |
             ${{ inputs.test-dir }}/tb.vcd
             ${{ inputs.test-dir }}/sim_build/gl/tb.fst
+            ${{ inputs.test-dir }}/*.fst
             ${{ inputs.test-dir }}/results.xml
             ${{ inputs.test-dir }}/output/*
 
