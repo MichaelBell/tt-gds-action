@@ -102,7 +102,7 @@ runs:
       if: always()
       uses: actions/upload-artifact@v7
       with:
-          name: gatelevel_test_results
+          name: gatelevel_test_fst${{ inputs.make-targets }}
           path: |
             ${{ inputs.test-dir }}/tb.vcd
             ${{ inputs.test-dir }}/sim_build/gl/tb.fst
