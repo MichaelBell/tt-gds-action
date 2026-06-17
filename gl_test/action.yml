@@ -84,7 +84,7 @@ runs:
           name: gatelevel_test_results
           path: |
             ${{ inputs.test-dir }}/tb.vcd
-            ${{ inputs.test-dir }}/tb.fst
+            ${{ inputs.test-dir }}/sim_build/gl/tb.fst
             ${{ inputs.test-dir }}/results.xml
             ${{ inputs.test-dir }}/output/*
 
