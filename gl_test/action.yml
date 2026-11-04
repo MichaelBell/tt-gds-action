@@ -18,6 +18,16 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Remove unneeded frameworks to recover disk space
+      shell: bash
+      run: |
+        echo "-- Before --"
+        df -h
+        sudo rm -rf /usr/share/dotnet
+        sudo rm -rf /usr/local/lib/android
+        echo "-- After --"
+        df -h
+
     - name: Download GDS artifact
       uses: actions/download-artifact@v7
       with:
